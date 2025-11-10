@@ -3,7 +3,7 @@ from scipy.stats import norm
 from scipy.stats import t
 
 
-np.random.seed(0)           #for reproducible results
+np.random.seed(1)           #for reproducible results
 N = 10000                   #number of samples
 nu = 4                      #degrees of freedom student-t distribution
 mean = np.zeros(3)          #mean of distribution dS_2, dS_10, dg
