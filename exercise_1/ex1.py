@@ -20,10 +20,13 @@ from exercise_1.yield_curves import (
     transition_risk_yield_curve,
 )
 
+np.random.seed(1)
+
 T = 10 / 252
 a = 0.03
 sigma = 0.01
 scale_factor = 100e6
+N = 10000
 
 CURVE_TYPE = Literal[
     "default",
@@ -148,9 +151,8 @@ for curve_type in curve_scenarios:
         )
     )
 
-    # Monte Carlo simulation: N=10,000 scenarios over T=10d horizon
+    # Monte Carlo simulation
     time_points = np.array([0, 10 / 252, 2])
-    N = 10000
     paths = GeneratePathsHWEuler(
         NoOfPaths=N,
         NoOfSteps=None,
